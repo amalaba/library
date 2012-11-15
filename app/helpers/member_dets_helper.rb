@@ -1,0 +1,2 @@
+module MemberDetsHelper
+end

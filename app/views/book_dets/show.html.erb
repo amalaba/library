@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @book_det.name %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @book_det.author %>
+</p>
+
+<p>
+  <b>Available:</b>
+  <%= @book_det.available %>
+</p>
+
+
+<%= link_to 'Reserve', :action => "BookDetsController::reserve_book"%> |
+<%= link_to 'Back', book_dets_path %>
