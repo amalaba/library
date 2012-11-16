@@ -37,6 +37,9 @@ class MemberDetsController < ApplicationController
     @member_det = MemberDet.find(params[:id])
   end
 
+  def check
+    @member_det = MemberDet.find(params[:id])
+  end
   # POST /member_dets
   # POST /member_dets.json
   def create

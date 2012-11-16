@@ -2,8 +2,8 @@ class BookDetsController < ApplicationController
   # GET /book_dets
   # GET /book_dets.json
   def index
+    puts "hellooooooooooo m here********"
     @book_dets = BookDet.all
-    reserve_book 4
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @book_dets }
@@ -37,15 +37,15 @@ class BookDetsController < ApplicationController
     @book_det = BookDet.find(params[:id])
   end
   
-  def reserve_book(id)
-   # puts "hello #{id} is here
-    @book_det = BookDet.find(id)
-    puts "ChECK avaialibity --->>> #{@book_det.available}"
-    puts "ChECK name --->>> #{@book_det.name}"
-    puts "ChECK author--->>> #{@book_det.author}"
+  def reserve
+    @book_det = BookDet.find(params[:id])
     respond_to do |format|
       if @book_det.available
+        !@book_det.available
         format.html { redirect_to @book_det, notice: 'book was succesfully reserved'}
+        format.json { render json: @book_det}
+      else 
+        format.html { redirect_to @book_det, notice: 'sorry the book is not available'}
         format.json { render json: @book_det}
       end
     end

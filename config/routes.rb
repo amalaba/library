@@ -1,11 +1,25 @@
 Library::Application.routes.draw do
-  resources :member_dets
+  resources :member_dets do
+    member do
+      get :check
+      get "/check"
+    end
+  end
 
-  resources :book_dets
+  resources :book_dets do
+    member do
+      get :reserve
+    end
+  end
 
   get "menu/menu"
 
   get "welcome/index"
+
+
+  #get "reserve_book"
+  
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

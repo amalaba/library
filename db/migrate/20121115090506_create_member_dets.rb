@@ -5,7 +5,6 @@ class CreateMemberDets < ActiveRecord::Migration
       t.integer :age
       t.string :sex
       t.text :Address
-
       t.timestamps
     end
   end
